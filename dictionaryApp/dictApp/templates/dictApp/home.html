@@ -37,8 +37,13 @@
             <script>
                 document.getElementById("container").style.display = "block";
             </script>
-            <h1 class="text-danger p-1"><span class="text-muted fs-4">word: </span>{{word}}</h1>
-            <h2 class="p-3">{{meaning}}</h2><br>
+            {% if meaning == "Please recheck what you've entered" %}
+                <h2 class="p-3">{{meaning}}</h2><br>
+            {% else %}
+                <h1 class="text-danger p-1"><span class="text-muted fs-4">word: </span>{{word}}</h1>
+                <h2 class="p-3">{{meaning}}</h2><br>
+            {% endif %}
+
         {% endif %}
         
 

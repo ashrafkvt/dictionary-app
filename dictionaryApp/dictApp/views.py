@@ -24,7 +24,7 @@ def home(request):
             if len(span) > 0:
                 data['meaning'] = span[0].text
             else:
-                data['meaning'] = "please recheck what you've entered"
+                data['meaning'] = "Please recheck what you've entered"
         return render(request, 'dictApp/home.html', data)
     else:
         print("sdbsjdbsd")
