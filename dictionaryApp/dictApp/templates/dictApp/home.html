@@ -15,18 +15,37 @@
     </div>
 
     <div class="container mt-5">
-        <form action="" method="post">
+        <form action="{% url 'home_path' %}" method="post">
             {% csrf_token %}
             <div class="input-group">
                 <input type="search" name="word" class="form-control rounded p-3" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary px-4"> Search </button>
+                <button type="submit" class="btn btn-outline-primary px-4"> Search </button>
             </div>
         </form>
     </div>
+    
+    <div id="container" class="container mt-5 bg-light w-50" style="display: none;">
 
-    <div class="container mt-5 bg-light w-50" style="display: none;">
-        <h1 class="p-2"></h1><br><br>
+    {% if meaning|length > 0 %}
+
+        {% if meaning == "Please enter a word to search"  %}
+            <script>
+                document.getElementById("container").style.display = "block";
+            </script>
+            <p class="text-danger fs-3 text-center">{{meaning}}</p>
+        {% else %}
+            <script>
+                document.getElementById("container").style.display = "block";
+            </script>
+            <h1 class="text-danger p-1"><span class="text-muted fs-4">word: </span>{{word}}</h1>
+            <h2 class="p-3">{{meaning}}</h2><br>
+        {% endif %}
+        
+
+    {% endif %}
+   
     </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
