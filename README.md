@@ -5,3 +5,4 @@ Building a dictionary app using Django, and BeautifulSoup
 - [Python](https://www.python.org/)
 - [Django](https://www.djangoproject.com/)
 - [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+- [HTML](https://html.com/)
